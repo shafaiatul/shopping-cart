@@ -2,13 +2,19 @@
 <html>
   <head>
     <title>{{title}}</title>
+    <link rel='icon' href='/images/shopping-cart.png' type='image/png'/ >
+    {{!-- Font Awesome  --}}
+    <script src="https://use.fontawesome.com/b3157ba27f.js"></script>
     <!-- Paper bootstrap theme -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css">
 
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    {{{body}}}
+    {{> header }}
+    <div class="container">
+      {{{body}}}
+    </div>
 
 
     {{!-- Jquery --}}
