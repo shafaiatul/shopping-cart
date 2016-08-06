@@ -1,18 +1,23 @@
+
 <div class="row">
+  {{# each products}}
+
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img src="https://images-na.ssl-images-amazon.com/images/I/819RrYclGzL._SY679_.jpg" alt="..." class="img-responsive">
+      <img src="{{this.imagePath}}" alt="..." class="img-responsive">
       <div class="caption">
-        <h4>Herbal Secrets Maca 500 Mg 250 Caps</h4>
-        <p class="product-description">Maca (Lepidium meyenii) is grown at high elevatioins in the Andes region of central Peru. It has been used for centuries by indigenous Peruvians as a food source, as well as for increasing stamina and energy</p>
+        <h4>{{this.title}}</h4>
+        <p class="product-description">{{this.description}}</p>
       </div>
       <div class="price-button clearfix">
-        <div class="price pull-left">$12</div>
+        <div class="price pull-left">{{this.price}}</div>
         <div class="pull-right">
           <a href="#" class="btn btn-success" role="button">Buy</a>
         </div>
       </div>
     </div>
   </div>
+
+  {{/each}}
 
 </div>
