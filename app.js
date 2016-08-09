@@ -4,17 +4,27 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+// Handlebars Templating Engine
 var expressHbs  = require('express-handlebars');
+
+// Mongoose ODM
 var mongoose = require('mongoose');
-
-
+// Express Session Package
+var session = require('express-session');
 
 var routes = require('./routes/index');
 
 
 var app = express();
 
-mongoose.connect('localhost:27017/shopping'); 
+// Enable session with some configurations
+app.use(session({
+  secret: 'mysupplementsecret',
+  resave: false,
+  saveUninitialized: false
+}));
+
+mongoose.connect('localhost:27017/shopping');
 
 // view engine setup
 app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
